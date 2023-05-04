@@ -1,23 +1,13 @@
 const app = Vue.createApp({
   data: () => ({
-    newItem: '',
-    todos: []
+    message: 'Hello <span style="color:red">Vue.js!</span>',
+    number: 100,
+    ok: true,
+    url: 'https://www.google.com/',
   }),
   methods: {
-    addItem: function (event) {
-      // console.log('Clicked!')
-      if(this.newItem === '') return
-      let todo = {
-        item: this.newItem,
-        isDone: false
-      }
-      this.todos.push(todo)
-      this.newItem = ''
-    },
-    deleteItem: function(index) {
-      // console.log('delete')
-      // console.log(index)
-      this.todos.splice(index, 1)
+    clickHandler: function(event) {
+      this.message = this.message.split('').reverse().join('')
     }
   }
 })
