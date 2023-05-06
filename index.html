@@ -9,25 +9,11 @@
   </head>
   <body>
     <div id="app">
-      <p v-once>{{ message }}</p>
-      <button v-on:click="clickHandler">Click!</button>
-      <p v-pre>{{ message }}</p>
-      <p>{{ message }}</p>
-      <p v-html="message"></p>
-      <p v-cloak>{{ message }}</p>
-      <p>{{ message }}</p>
-      <h2>Mustache</h2>
-
-      <h2>v-text</h2>
-      <p v-text="message"></p>
-
-      <p>{{ message }}</p>
-      <p>{{ number + 1 }}</p>
-      <p>{{ message.split('').reverse().join('') }}</p>
-      <p>{{ ok ? 'yes' : 'no' }}</p>
-      <p>{{ ok ? message : '' }}</p>
-      <a v-bind:href="url">Link1</a><br>
-      <a :href="url">Link2</a>
+      <button v-on:click="show = !show">Change</button>
+      <transition name="fade">
+        <p v-show="show">Hello Transition</p>
+      </transition>  
+      <p v-show="show">Hello Transition</p>
     </div>
     <script src="https://unpkg.com/vue@3.1.5"></script>
     <script src="js/main.js"></script>
